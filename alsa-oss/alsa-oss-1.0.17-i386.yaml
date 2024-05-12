@@ -1,0 +1,20 @@
+name: alsa-oss
+sources:
+  - type: archive
+    url: https://www.alsa-project.org/files/pub/oss-lib/alsa-oss-1.0.17.tar.bz2
+    sha256: 8d009e23e2cbee1691ec3c95d1838056a804d98440eae7715d6c3aebc710f9ca
+  - type: patch
+    path: alsa-oss-1.0.12-aoss.patch
+  - type: patch
+    path: alsa-oss-1.0.17-missing-libio.patch
+  - type: patch
+    path: alsa-oss-glibc-open.patch
+no-autogen: true
+build-options:
+  prepend-pkg-config-path: /app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig
+  ldflags: -L/app/lib32
+  prepend-path: /usr/lib/sdk/toolchain-i386/bin
+  env:
+    CC: i686-unknown-linux-gnu-gcc
+    CXX: i686-unknown-linux-gnu-g++
+  libdir: /app/lib32
