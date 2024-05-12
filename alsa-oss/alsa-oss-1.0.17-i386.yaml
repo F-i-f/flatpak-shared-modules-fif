@@ -18,3 +18,8 @@ build-options:
     CC: i686-unknown-linux-gnu-gcc
     CXX: i686-unknown-linux-gnu-g++
   libdir: /app/lib32
+cleanup:
+  - '*.a'
+  - '*.la'
+  - /include
+  - /share/man
