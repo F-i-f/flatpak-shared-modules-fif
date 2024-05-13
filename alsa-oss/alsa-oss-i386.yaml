@@ -12,8 +12,6 @@ build-options:
     CC: i686-unknown-linux-gnu-gcc
     CXX: i686-unknown-linux-gnu-g++
   libdir: /app/lib32
-post-install:
-  - strip --strip-debug --strip-unneeded /app/lib32/*.so.0.0.0
 cleanup:
   - '*.a'
   - '*.la'
