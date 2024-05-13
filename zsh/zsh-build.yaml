@@ -6,3 +6,5 @@ sources:
 no-autogen: true
 config-opts:
   - --prefix=/app/build
+cleanup:
+  - /lib/debug
