@@ -1,0 +1,8 @@
+name: ptyopen-build
+sources:
+  - type: archive
+    url: http://ftp.fifi.org/phil/ptyopen/ptyopen-0.94.tar.gz
+    sha256: 75b9cad8d7b391c21147b1cbaa4bbef2d313be76ad4b43a4f1abf1ed81575239
+no-autogen: true
+config-opts:
+  - --prefix=/app/build
