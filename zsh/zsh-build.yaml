@@ -10,5 +10,6 @@ sources:
 no-autogen: true
 config-opts:
   - --prefix=/app/build
+  - --with-tcsetpgrp
 cleanup:
   - /lib/debug
