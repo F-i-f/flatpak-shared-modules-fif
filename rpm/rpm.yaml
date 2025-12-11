@@ -10,9 +10,9 @@ build-commands:
   - sed -i -e 's!${Python3_SITEARCH}!/app/lib/python'"$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"'/site-packages!' python/CMakeLists.txt
 sources:
   - type: archive
-    url: https://ftp.osuosl.org/pub/rpm/releases/rpm-4.20.x/rpm-4.20.1.tar.bz2
-    sha256: 52647e12638364533ab671cbc8e485c96f9f08889d93fe0ed104a6632661124f
-    dest-filename: rpm-4.20.1.tar.bz2
+    url: https://ftp.osuosl.org/pub/rpm/releases/rpm-6.0.x/rpm-6.0.1.tar.bz2
+    sha256: 44fd2e1425885288ce8e8da8f18e6b85bd380332c2972554a85860af10f86d0f
+    dest-filename: rpm-6.0.1.tar.bz2
 modules:
   - ../shared-modules/lua5.4/lua-5.4.json
   - name: popt
@@ -22,3 +22,12 @@ modules:
         url: https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz
         sha256: c25a4838fc8e4c1c8aacb8bd620edb3084a3d63bf8987fdad3ca2758c63240f9
         dest-filename: popt-1.19.tar.gz
+  - name: scdoc
+    buildsystem: simple
+    build-commands:
+      - make install PREFIX="$FLATPAK_DEST"
+    sources:
+      - type: archive
+        url: https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.4.tar.gz
+        sha256: e1a9c2000f855123a1a50c8f897073e0ee95fc41787431efe3864c2f1c2e7092
+        dest-filename: scdoc-1.11.4.tar.gz
