@@ -1,9 +1,12 @@
 This repository contains commonly shared modules and is intended to be used as a git submodule.
+Note that it includes the [FlatHub shared-modules](https://github.com/flathub/shared-modules)
+as a git submodule.
 
 To use shared modules for packaging an application, add the submodule:
 
 ```
 git submodule add https://github.com/F-i-f/flatpak-shared-modules-fif.git shared-modules-fif
+git submodule update --init --recursive
 ```
 
 Then modules from this repository can be specified in a manifest JSON file like this:
@@ -20,7 +23,7 @@ Then modules from this repository can be specified in a manifest JSON file like 
 To update the submodule:
 
 ```
-git submodule update --remote --merge
+git submodule update --remote --merge --recursive
 ```
 
 To remove the submodule:
